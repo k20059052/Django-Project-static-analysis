@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+<title>Create a Ticket</title>
+    <div class="form-card card" style="min-width:18vmin;">
+        <h1>Create a Ticket</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% include 'partials/bootstrap_form.html' with form=form %}
+            <button id="blue-btn" class="btn" type="submit">Send</button>
+            <a id="red-btn" class="btn" href="{% url 'student_dashboard' %}">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

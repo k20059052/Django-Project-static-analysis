@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <title>Dashboard</title>
+    <div class="banner dash-banner">
+        <div class="dash-title">
+            <img src="{% static 'admin/icons/line-chart.svg' %}" style="opacity:0.5; height:5vmin;">
+            <h1 class="dash-header">Student Dashboard</h1>
+        </div>
+        <h4 class="dash-subtitle">View and Submit Tickets Here</h4>
+    </div>
+    <div class="container">
+        <div id="dash-card" class="card">
+            <div id="dash-card-header" class="card-header">
+                    <div style="padding-top:0.3vmin;">Tickets</div>
+                    <a id="dash-card-header-link" href="{% url 'create_ticket' %}" style="margin:1vmin; text-decoration: none;">Create ticket  🢒</a>
+            </div>
+            <div id="dash-card-body" class="card-body" style="padding-top:2px;">
+                <form method="POST">
+                    {% csrf_token %}
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                        <button class="nav-link" type="submit" name="type_of_ticket" value="Open" style="color:#475B63;">Open Tickets</button>
+                        </li>
+                        <li class="nav-item">
+                        <button class="nav-link" type="submit" name="type_of_ticket" value="Closed" style="color:#475B63;">Closed Tickets</button>
+                        </li>
+                    </ul>
+                </form>
+                {% include 'inbox.html' %}
+            </div>
+        </div>
+
+        </div>
+    </div>
+{% endblock %}

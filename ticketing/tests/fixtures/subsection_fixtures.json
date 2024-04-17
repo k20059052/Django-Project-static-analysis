@@ -1,0 +1,394 @@
+[
+{
+  "model": "ticketing.subsection",
+  "pk": 1,
+  "fields": {
+    "department": 1,
+    "name": "Physical health & sport"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 2,
+  "fields": {
+    "department": 1,
+    "name": "Mental health & wellbeing"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 3,
+  "fields": {
+    "department": 1,
+    "name": "Counselling Service"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 4,
+  "fields": {
+    "department": 1,
+    "name": "Crisis Support"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 5,
+  "fields": {
+    "department": 2,
+    "name": "Student accomodation options"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 6,
+  "fields": {
+    "department": 2,
+    "name": "Council tax & household bills"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 7,
+  "fields": {
+    "department": 2,
+    "name": "Being a tenant"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 8,
+  "fields": {
+    "department": 3,
+    "name": "Confirmation of Acceptance for Studies"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 9,
+  "fields": {
+    "department": 3,
+    "name": "Student visa"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 10,
+  "fields": {
+    "department": 3,
+    "name": "EU/EEA Nationals"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 11,
+  "fields": {
+    "department": 3,
+    "name": "Medical & Dental students"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 12,
+  "fields": {
+    "department": 3,
+    "name": "Working in the United Kingdom"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 13,
+  "fields": {
+    "department": 3,
+    "name": "Police registration"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 14,
+  "fields": {
+    "department": 4,
+    "name": "Your ID & Student Record"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 15,
+  "fields": {
+    "department": 4,
+    "name": "Modules"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 16,
+  "fields": {
+    "department": 4,
+    "name": "Timetable"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 17,
+  "fields": {
+    "department": 4,
+    "name": "Interruption, Transfer & Withdrawal"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 18,
+  "fields": {
+    "department": 5,
+    "name": "Academic Skills"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 19,
+  "fields": {
+    "department": 5,
+    "name": "Digital Skills & Studying Online"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 20,
+  "fields": {
+    "department": 5,
+    "name": "Employability & your career journey"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 21,
+  "fields": {
+    "department": 6,
+    "name": "Appeals"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 22,
+  "fields": {
+    "department": 6,
+    "name": "Complaint"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 23,
+  "fields": {
+    "department": 6,
+    "name": "Misconduct"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 24,
+  "fields": {
+    "department": 6,
+    "name": "Fitness to practise"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 25,
+  "fields": {
+    "department": 7,
+    "name": "Reporting incidents"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 26,
+  "fields": {
+    "department": 7,
+    "name": "Principles, Definitions & Policies"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 27,
+  "fields": {
+    "department": 7,
+    "name": "Supporting Diverse & Specific Needs"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 28,
+  "fields": {
+    "department": 8,
+    "name": "During Your Studies"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 29,
+  "fields": {
+    "department": 8,
+    "name": "Studying on a visa"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 30,
+  "fields": {
+    "department": 8,
+    "name": "Finishing your studies"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 31,
+  "fields": {
+    "department": 9,
+    "name": "Applying for funding, bursaries & scholarships"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 32,
+  "fields": {
+    "department": 9,
+    "name": "Money Advice"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 33,
+  "fields": {
+    "department": 9,
+    "name": "Paying Fees"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 34,
+  "fields": {
+    "department": 9,
+    "name": "Financial hardship"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 35,
+  "fields": {
+    "department": 10,
+    "name": "Personal Tutoring"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 36,
+  "fields": {
+    "department": 10,
+    "name": "Campus Life & London"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 37,
+  "fields": {
+    "department": 11,
+    "name": "System support & troubleshooting"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 38,
+  "fields": {
+    "department": 11,
+    "name": "Reporting accessibility difficulties"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 39,
+  "fields": {
+    "department": 12,
+    "name": "Disability Support Services"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 40,
+  "fields": {
+    "department": 12,
+    "name": "Disability Funding"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 41,
+  "fields": {
+    "department": 12,
+    "name": "Support for Learning"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 42,
+  "fields": {
+    "department": 12,
+    "name": "Other support for disabled students"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 43,
+  "fields": {
+    "department": 13,
+    "name": "Preparing to finish university"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 44,
+  "fields": {
+    "department": 13,
+    "name": "Graduation ceremonies"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 45,
+  "fields": {
+    "department": 13,
+    "name": "After Graduating"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 46,
+  "fields": {
+    "department": 14,
+    "name": "Before You Join"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 47,
+  "fields": {
+    "department": 14,
+    "name": "Getting Started"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 48,
+  "fields": {
+    "department": 14,
+    "name": "Welcome to King's events"
+  }
+},
+{
+  "model": "ticketing.subsection",
+  "pk": 49,
+  "fields": {
+    "department": 14,
+    "name": "Adjusting to Student Life"
+  }
+}
+]

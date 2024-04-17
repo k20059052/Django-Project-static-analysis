@@ -1,0 +1,84 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container" style="margin-top: 1vmin; margin-bottom: 1vmin">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'admin/img/logo.png' %}" style="width:15%">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" style="margin-left: auto;">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'faq' %}">FAQs</a>
+                </li>
+                {% if request.user.role == 'SP' %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'specialist_dashboard' ticket_type='personal' %}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'specialist_statistics' %}">Statistics</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Manage FAQs
+                    </a>
+                    
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item"href="{% url 'specialist_department_faq' %}">Check Department FAQ</a></li>
+                        <li><a class="dropdown-item" href="{% url 'check_faq' %}">Check Your FAQs</a></li>
+                        <li><a class="dropdown-item" href="{% url 'faq_form_view'%}">Create FAQ</a></li>
+                        <li><a class="dropdown-item" href="{% url 'subsection_manager' %}">Manage Subsection</a></li>
+                    </ul>
+                  </li>
+                {% endif %}
+                {% if request.user.role == 'ST' %}
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'student_dashboard' %}">Dashboard</a>
+                </li>
+                {% endif %}
+                {% if request.user.role == 'DI' %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'director_panel' %}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'director_statistics' %}">Statistics</a>
+                </li>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                <li id="navatar-spacing" class="nav-item"></li>
+                <li class="nav-item">
+                <a id="navatar" class="nav-link"
+                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{request.user.first_name|make_list|first|upper }}{{request.user.last_name|make_list|first|upper}}</a>
+                    <ul
+                    id="navatar-dropdown"
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="navatar"
+                    >
+                    <lh class="dropdown-item">
+                        <p class="dropdown-name">{{request.user.first_name}} {{request.user.last_name}}</p>
+                        <p class="dropdown-sub dropdown-email">{{request.user.email}}</p>
+                        <p class="dropdown-sub dropdown-role">{{request.user.get_role_display}}</p>
+                    </lh>
+                    <hr class="solid">
+                    <li>
+                        <a class="dropdown-item" href="/{{request.user.id}}/change_password/">Change Password</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+                    </li>
+                    </ul>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+  </nav>

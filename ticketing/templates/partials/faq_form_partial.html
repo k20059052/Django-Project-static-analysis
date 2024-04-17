@@ -1,0 +1,29 @@
+<form method="post">
+    {% csrf_token %}
+    {% include 'partials/bootstrap_form.html' with form=form %}
+  <div class="btn-container">
+    <div class="equal-width-btns">
+            <button class="btn" id="blue-btn" type="submit">
+            {% if request.resolver_match.url_name == 'faq_update' %}
+              <div class="icon-shift">
+                <i class="bi bi-check-lg"></i>
+                <span>Update</span>
+              </div>
+              {% else %}
+              <div class="icon-shift">
+                <i class="bi bi-check-lg"></i>
+                <span>Add</span>
+              </div>
+              {% endif %}
+            </button>
+        </div>
+    </form>
+    <div class="equal-width-btns">
+      <button class="btn" id="red-btn" type="button" onclick="history.back()">
+        <div class="icon-shift">
+          <i class="bi bi-x-lg"></i>
+          <span>Cancel</span>
+        </div>
+      </button>
+    </div>
+  </div>

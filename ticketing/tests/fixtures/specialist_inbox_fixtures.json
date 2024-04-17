@@ -1,0 +1,410 @@
+[
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 1,
+  "fields": {
+    "specialist": 58,
+    "ticket": 1
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 2,
+  "fields": {
+    "specialist": 57,
+    "ticket": 2
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 3,
+  "fields": {
+    "specialist": 55,
+    "ticket": 20
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 4,
+  "fields": {
+    "specialist": 55,
+    "ticket": 24
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 5,
+  "fields": {
+    "specialist": 55,
+    "ticket": 27
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 6,
+  "fields": {
+    "specialist": 57,
+    "ticket": 35
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 7,
+  "fields": {
+    "specialist": 59,
+    "ticket": 8
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 8,
+  "fields": {
+    "specialist": 59,
+    "ticket": 26
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 9,
+  "fields": {
+    "specialist": 59,
+    "ticket": 48
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 10,
+  "fields": {
+    "specialist": 60,
+    "ticket": 49
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 11,
+  "fields": {
+    "specialist": 62,
+    "ticket": 14
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 12,
+  "fields": {
+    "specialist": 63,
+    "ticket": 30
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 13,
+  "fields": {
+    "specialist": 63,
+    "ticket": 31
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 14,
+  "fields": {
+    "specialist": 62,
+    "ticket": 36
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 15,
+  "fields": {
+    "specialist": 67,
+    "ticket": 6
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 16,
+  "fields": {
+    "specialist": 66,
+    "ticket": 13
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 17,
+  "fields": {
+    "specialist": 67,
+    "ticket": 23
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 18,
+  "fields": {
+    "specialist": 67,
+    "ticket": 37
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 19,
+  "fields": {
+    "specialist": 65,
+    "ticket": 38
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 20,
+  "fields": {
+    "specialist": 69,
+    "ticket": 17
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 21,
+  "fields": {
+    "specialist": 69,
+    "ticket": 42
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 22,
+  "fields": {
+    "specialist": 73,
+    "ticket": 5
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 23,
+  "fields": {
+    "specialist": 71,
+    "ticket": 9
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 24,
+  "fields": {
+    "specialist": 74,
+    "ticket": 12
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 25,
+  "fields": {
+    "specialist": 76,
+    "ticket": 46
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 26,
+  "fields": {
+    "specialist": 78,
+    "ticket": 39
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 27,
+  "fields": {
+    "specialist": 79,
+    "ticket": 44
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 28,
+  "fields": {
+    "specialist": 79,
+    "ticket": 45
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 29,
+  "fields": {
+    "specialist": 80,
+    "ticket": 19
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 30,
+  "fields": {
+    "specialist": 80,
+    "ticket": 33
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 31,
+  "fields": {
+    "specialist": 80,
+    "ticket": 51
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 32,
+  "fields": {
+    "specialist": 84,
+    "ticket": 11
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 33,
+  "fields": {
+    "specialist": 84,
+    "ticket": 22
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 34,
+  "fields": {
+    "specialist": 85,
+    "ticket": 25
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 35,
+  "fields": {
+    "specialist": 84,
+    "ticket": 28
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 36,
+  "fields": {
+    "specialist": 85,
+    "ticket": 29
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 37,
+  "fields": {
+    "specialist": 84,
+    "ticket": 41
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 38,
+  "fields": {
+    "specialist": 83,
+    "ticket": 50
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 39,
+  "fields": {
+    "specialist": 86,
+    "ticket": 4
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 40,
+  "fields": {
+    "specialist": 87,
+    "ticket": 7
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 41,
+  "fields": {
+    "specialist": 86,
+    "ticket": 16
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 42,
+  "fields": {
+    "specialist": 86,
+    "ticket": 47
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 43,
+  "fields": {
+    "specialist": 91,
+    "ticket": 15
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 44,
+  "fields": {
+    "specialist": 89,
+    "ticket": 21
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 45,
+  "fields": {
+    "specialist": 89,
+    "ticket": 32
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 46,
+  "fields": {
+    "specialist": 90,
+    "ticket": 34
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 47,
+  "fields": {
+    "specialist": 90,
+    "ticket": 40
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 48,
+  "fields": {
+    "specialist": 93,
+    "ticket": 10
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 49,
+  "fields": {
+    "specialist": 94,
+    "ticket": 18
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 50,
+  "fields": {
+    "specialist": 95,
+    "ticket": 3
+  }
+},
+{
+  "model": "ticketing.specialistinbox",
+  "pk": 51,
+  "fields": {
+    "specialist": 97,
+    "ticket": 43
+  }
+}
+]

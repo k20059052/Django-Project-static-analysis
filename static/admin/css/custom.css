@@ -1,0 +1,621 @@
+:root {
+    --blue: #0360F3;
+    --red: #DC392D;
+    --green: #00AC69;
+    --yellow: #F4A31A;
+    --orange: #ED5524;
+    --purple: #620BB6;
+    --grey: #475B63;
+    --light-grey: #BFB8BE;
+    --primary: #E9ECF2;
+    --student: rgb(243, 3, 79);
+}
+
+body {
+    overflow-x: hidden; /* Hide scrollbars */
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Partials */
+
+.footer {
+    text-align: center;
+    color: var(--light-grey);
+}
+
+.blue-link {
+    text-decoration: none;
+    color: var(--blue);
+    cursor:pointer;
+}
+
+
+
+
+@media (max-width:767px) {
+    .blue-link{
+        font-size: 65%;
+    }
+    .unclaim-link{
+        font-size: 65%;
+    }
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.subtext {
+    color: var(--grey);
+}
+
+#navatar-spacing {
+    padding-left: 4vmin;
+    padding-right: 4vmin;
+    padding-top: 2vmin;
+    padding-bottom: 2vmin;
+}
+
+#navatar {
+    font-family:'Source Code Pro';
+    aspect-ratio: 1/1;
+    border-style: solid;
+    border-radius: 5vmin;
+    border-color: var(--bs-nav-link-color);
+    border-width: 1.5px;
+    text-align: center;
+    align-items: center;
+    overflow: cover;
+    min-height: 40px;
+    min-width: 40px;
+    max-height: 40px;
+    max-width: 40px;
+}
+
+#navatar-dropdown {
+    animation: fadeIn 0.5s;
+    margin-top: 2vmin;
+    margin-right: 15vmin;
+}
+
+.dropdown-name {
+    margin-bottom: 0;
+}
+
+.dropdown-sub {
+    color: var(--grey);
+    font-size:x-small;
+    margin-bottom: 0.5vmin;
+}
+
+hr.solid {
+    margin-top: 1vmin;
+    border-top: 3px solid #bbb;
+}
+
+/* Main elements */
+
+.messages {
+    top: 15vmin;
+    transform: translate(30%,0);
+    margin: auto;
+    width: 50%;
+    padding:0px;
+    margin:0px;
+    justify-content: center;
+    position: absolute;
+
+}
+
+.container {
+    margin-top: 3vmin;
+    margin-bottom: 3vmin;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    color: var(--blue);
+    flex-wrap: wrap;
+   
+  }
+  
+  @media (max-width: 563px) {
+    .pagination {
+      flex-direction: column;
+      justify-content: center;
+      width: 5%;
+      text-align: center;
+      margin-left:50%; 
+      flex-wrap: wrap;
+    }
+    .pagination > li {
+      flex-grow: 1;
+      flex-basis:66.66%;
+    }
+  }
+  
+  
+
+.banner {
+    background: linear-gradient(to right, rgb(93, 184, 140), rgb(57, 232, 238));
+}
+
+.specialist-banner {
+    background: linear-gradient(to right, rgb(110,34,242), rgb(43,22,92));
+}
+
+.director-banner {
+    background: linear-gradient(to right, rgb(2, 11, 91), rgb(3,96,243));
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+/* Tables */
+td {
+    vertical-align: middle;
+}
+
+
+/* Buttons */
+
+#blue-btn {
+    --bs-btn-bg: transparent;
+    --bs-btn-color: var(--blue);
+    --bs-btn-border-color: var(--blue);
+    --bs-btn-hover-color: var(--primary);
+    --bs-btn-hover-bg: var(--blue);
+}
+
+#red-btn {
+    --bs-btn-bg: transparent;
+    --bs-btn-color: var(--red);
+    --bs-btn-border-color: var(--red);
+    --bs-btn-hover-color: var(--primary);
+    --bs-btn-hover-bg: var(--red);
+}
+
+#green-btn {
+    --bs-btn-bg: transparent;
+    --bs-btn-color: var(--green);
+    --bs-btn-border-color: var(--green);
+    --bs-btn-hover-color: var(--primary);
+    --bs-btn-hover-bg: var(--green);
+}
+.equal-width-btns button {
+    width: 100px;
+    flex: 1;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    gap:2vmin;
+}
+.custom-btn{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 175px;
+    text-align: center;
+  }
+
+
+  /* Card container */
+
+.form-card {
+    padding: 3vmin;
+    margin: 5vmin;
+}
+
+.small-card{
+    margin-left: 50vmin;
+    margin-right: 50vmin;
+}
+
+/* Dashboard */
+.dash-banner {
+    height: 35vmin;
+    padding: 1vmin;
+    padding-left: 20vmin;
+    padding-right: 17vmin;
+    padding-top: 5vmin;
+    margin-top: -5vmin;
+    margin-left: -18vmin;
+    margin-right: -14.4vmin;
+    margin-bottom: -15vmin;
+}
+
+.dash-title {
+    display: flex;
+    margin-bottom: 0px;
+    color: white;
+    align-items: center;
+
+   
+}
+.dash-header{
+    display: flex;
+    font-size: 2rem;
+}
+
+@media (max-width:863px) {
+    .dash-header{
+        font-size: 1rem;
+    }
+    .dash-title{
+        font-size: 0.95rem;
+    }
+}
+@media (max-width:763px)  {
+    .dash-header{
+        font-size: 0.95rem;
+    }
+    .dash-title{
+        font-size: 0.45rem
+    }
+}
+@media (max-height:563px) {
+    .dash-header{
+        font-size: 0.95rem;
+        padding-top: 6px;
+    }
+    .dash-title{
+        font-size: 0.35rem;
+    }
+}
+@media (max-width:263px) {
+    .dash-header{
+        font-size: 0.25rem;
+    }
+    .dash-title{
+        font-size:0.25rem;
+    }
+}
+.dash-subtitle {
+    padding-top: 1vmin;    
+    color: white;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+@media (max-height: 567px){
+.dash-subtitle {
+    font-size: 75%;
+    /* margin-top: inherit; */
+    margin-top: -30px;
+}
+}
+
+@media (max-width:767px) {
+    .dash-subtitle{
+        font-size: 40%;
+    }
+}
+
+#dash-card {
+    box-shadow: 0 4px 20px  rgba(0, 0, 0, 0.06);
+}
+
+
+#dash-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--blue);
+    padding-top:1.5vmin;
+    font-size: 3vmin;
+}
+
+#dash-card-header-link {
+    font-size: 2vmin;
+    text-align: right;
+}
+
+#dash-card-body {
+    padding-left: 0px;
+    padding-right: 0px
+}
+
+.reroute-dropdown {
+    display: flex;
+    align-items: center;
+    gap:2vmin;
+}
+
+/* Specialist Department FAQ View */
+.department-faq-grid {
+    display:grid;
+    gap:3vmin;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Director Panel */
+
+
+.dashboard-department-name{
+    display: flex;
+    justify-content: center;
+}
+@media (max-width:563px) {
+    .dashboard-department-name{
+        font-size: 95%;
+    }
+}
+
+.director-grid-container {
+    margin:1.75vmin;
+    display: grid;
+    gap: 3vmin;
+    grid-template-areas:
+        'main main right-top'
+        'main main right-middle'
+        'main main right-bottom';
+}
+
+.user-filter {
+    text-align: right;
+    margin:0vmin;
+}
+
+.filter-dropdown {
+    box-shadow: 0 4px 20px  rgba(0, 0, 0, 0.06);
+    animation: fadeIn 0.5s;
+}
+
+.utilities {
+    margin-right: 60vmin;
+}
+
+
+.add-user-dash {
+    grid-area: right-middle;
+}
+
+.user-manager-dash {
+    grid-area: main;
+}
+
+.dept-manager-dash {
+    grid-area: right-top;
+}
+
+.utilities {
+    display: flex;
+}
+
+/* Department Manager */
+
+
+.dept-filter {
+    margin:0px;
+    margin-bottom:0.4vmin;
+}
+
+.dept-manager-table-btns {
+    display: flex;
+    align-items: center;
+    margin:0px;
+    gap:2vmin;
+}
+
+
+/* FAQ Menu Page */
+.faq-banner {
+    height: 25vmin;
+    padding: 5vmin;
+    margin-top: -3vmin;
+    margin-left: -18vmin;
+    margin-right: -18vmin;
+    margin-bottom: 3vmin;
+}
+
+.faq-banner-gradient {
+    background: linear-gradient(to right, #67b26f, #4ca2cd);
+}
+
+.faq-header {
+    margin-top: 3.5vmin;
+    text-align: center;
+    font-size: 7vmin;
+    color: white;
+}
+@media (max-width:963px) {
+    .faq-header{
+        font-size: 6vmin;
+    }
+}
+
+.faq-icon {
+    opacity: 0.5;
+    font-size: 5vmin;
+    padding-right: 0.5vmin;
+}
+
+.faq-divider {
+    color: var(--grey);
+    opacity: 0.7;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 2vmin;
+
+}
+
+.faq-card {
+    margin-top: 0;
+    font-weight: 400;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    color: var(--blue);
+}
+
+.faq-card:hover {
+    transition: 0.2s ease;
+    transform: scale(102%);
+}
+
+/* Departnent FAQ Page */
+
+.dept-faq-banner {
+    background: linear-gradient(to right, #43cea2, #185a9d);
+}
+
+.dept-faq-header {
+    text-align: center;
+    margin-bottom: -2vmin;
+    margin-top: 5vmin;
+}
+
+.dept-faq-title {
+    font-size: 7vmin;
+}
+
+.faq-back{
+    font-size: 1rem;
+}
+@media (max-width:1063px) {
+    .dept-faq-title{
+        font-size: 5vmin;
+    }
+}
+@media (max-width:763px) {
+    .faq-back{
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width:563px) {
+    .faq-back{
+        padding-right: 55px;
+    }
+}
+
+.dept-faq-table {
+    width: 100%;
+    border-spacing: 15px;
+}
+
+.panel {
+    width: 100%;
+    margin-bottom:2vmin;
+}
+
+/* icon style */
+.icon-shift {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.icon-shift i {
+  margin-right: 0rem;
+}
+
+.icon-shift span {
+  margin-right: 0;
+  justify-content: center;
+}
+
+/*form error animation*/
+
+.form-group input:required:invalid{
+    border-color: var(--red);
+    animation: shake 0.5s;
+  }
+.form-group input:required:valid{
+    border-color: var(--blue);
+}
+.form-group input:required:empty{
+    border-color: var(--blue);
+    animation: none;
+}
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    60% { transform: translateX(-10px); }
+    80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+  }
+
+/* boostrap form button layout */
+.flex-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+  
+@media (max-width: 767px) {
+    .flex-item {
+      font-size: 95%;
+      flex-direction: column;
+    }
+}
+
+/* messages */
+.subject-title{
+    display: flex;
+}
+
+
+
+
+@media (max-width:767px) {
+    .nav-item{
+        font-size: 75%;
+    }
+}
+/* specialist dashboard tickets */ 
+
+.ticket-header{
+    display: flex;
+}
+.ticket-student{
+    display: flex;
+}
+#reroute{
+   width: 100%;
+   box-sizing: border-box; 
+}
+
+@media (max-width:763px) and (max-height:550px) {
+    .ticket-header{
+        font-size: 45%;
+    }
+    .ticket-student{
+        font-size: 45%;;
+    }
+    #reroute{
+        font-size: 45%;
+    }
+
+}
+
+
+
+  
+  
+
+  
+  
+  
+  

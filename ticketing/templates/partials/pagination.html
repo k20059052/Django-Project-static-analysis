@@ -1,0 +1,33 @@
+{% load get_query_filters %}
+<br>
+  <nav>
+    <ul class="pagination ">
+      {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="{% set_url_param request.META.QUERY_STRING 'page=' page_obj.previous_page_number %}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only"></span>
+          </a>
+        </li>
+      {% endif %}
+      {% for num in paginator.page_range %}
+        {% if page_obj.number == num %}
+          <li class="page-item active">
+            <a class="page-link" href="#">{{ num }}</a>
+          </li>
+        {% else %}
+          <li class="page-item">
+            <a class="page-link" href="{% set_url_param request.META.QUERY_STRING 'page=' num %}">{{ num }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+      {% if page_obj.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="{% set_url_param request.META.QUERY_STRING 'page=' page_obj.next_page_number %}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only"></span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class = center>
+<div class="card form-card">
+    <h1>Create a FAQ</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        {%include 'partials/faq_form_partial.html'%}
+    </form>
+</div>
+<div class="card form-card">
+    <h1>Ticket Contents</h1>
+    {% include 'partials/message_list.html' %}
+</div>
+</div>
+{% endblock %}

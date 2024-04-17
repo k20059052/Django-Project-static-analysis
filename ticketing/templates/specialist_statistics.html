@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+<title>FAQs</title>
+  {% comment %} <a href="{% url 'department_faq' obj.slug %}">
+    <p class="text-white ">
+        {{ obj.name }}
+    </p>
+</a>  {% endcomment %}
+<div class="banner faq-banner faq-banner-gradient">
+  <h2 class="faq-header">
+    Specialist Statistics
+    <i class="faq-icon fa-solid fa-location-arrow"></i>
+  </h2>
+</div>
+
+<div class="faq-grid">
+
+  {%for obj in object_list %}
+
+      <div class="card faq-card">
+        <div class="card-body">
+          <h3 class="card-title" style="font-size:3vmin;">{{obj.title}}</h3>
+          {%for obj_data in obj.data %}
+            <h5>{{obj_data.name}}: {{obj_data.value}}</h5>
+          {% endfor %}
+        </div>
+      </div>
+
+  {%endfor%}
+</div>
+
+{%include 'partials/pagination.html' %}
+{% endblock %}
+{%include 'partials/footer.html' %}

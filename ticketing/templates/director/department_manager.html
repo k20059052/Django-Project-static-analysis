@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<html>
+  {% load user_role_filters %}
+  {% load get_query_filters %}
+  <head>
+    <title> Department Manager </title>
+  </head>
+
+  <body>
+    <div class="dash-banner director-banner" style="height: 25vmin; margin-bottom:-11vmin;">
+      <div class="dash-title" style="justify-content: space-between;">
+        <div style="display:flex; align-items: center;">
+          <img src="{% static 'admin/icons/check-list.svg' %}" style="opacity:0.5; height:5vmin;">
+          <h1 class="dept-manager-title">Department Manager</h1>
+        </div>
+        <a href="{% url 'director_panel' %}" style="opacity:0.8; text-decoration:none; color: white;">🢐 Back to Dashboard</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="dept-manager-table card">
+        <div id="dash-card-header" class="card-header">
+          <div style="vertical-align: middle;">Departments</div>
+          <div class="dept-manager-table-btns">
+            <div class="dept-filter container">
+              <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration:none; font-size:2vmin; cursor: pointer;">Filter</a>
+              <div class="filter-dropdown dropdown-menu dropdown-menu-end" onclick="event.stopPropagation();">
+                <div class="card-body container" style="margin-top:0; margin-bottom:0;">
+                  <form method="get" style="display: inline;">
+                    {% include 'partials/bootstrap_auto_form.html' with form=filter_form %}
+                      <input id="green-btn" class="btn" type="submit" value="Apply">
+                  </form>
+
+                  <button id="red-btn" class="btn" onclick="location.href='{{ request.path }}'">Reset</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="add-dept-container">
+              <a data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration:none; cursor: pointer; font-size:4vmin;">+</a>
+              <div class="filter-dropdown dropdown-menu dropdown-menu-end">
+                <div class="card-header">Add Department</div>
+                <div class="card-body container" style="margin-top:0; margin-bottom:0;">
+                  <form method="post">
+                    {% csrf_token %}
+                    {% include 'partials/bootstrap_form.html' with form=form %}
+                    <div style="text-align: center">
+                      <input id="blue-btn" class="btn" type="submit" name="add" value="Add">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="dash-card-body" class="card-body" style="padding-top:0;">
+          <form method="post" style="display:inline;">
+            {% csrf_token %}
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                    <th style="padding-left:2vmin;">ID</th>
+                    <th>Name</th>
+                    <th style="text-align:center;">Edit</th>
+                    <th style="text-align:center;">Delete</th>
+                </thead>
+                {% for department in page_obj %}
+                <tr>
+                    <td style="padding-left:2vmin;">{{department.id}}</td>
+                    <td>{{department.name}}</td>
+                    <td style="text-align:center;"><button id="blue-btn" class="btn" type="submit" name="edit" value={{department.id}}>✎</button></td>
+                    <td style="text-align:center;"><button id="red-btn" class="btn" type="submit" name="delete" value={{department.id}}>✖</button></td>
+                </tr>
+                {% endfor %}
+              </table>
+            </div>
+            {% include 'partials/pagination.html' %}
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="form-card card">
+<h1>Create a Subsection for your department's FAQs</h1>
+<hr>
+<form method="post">
+    {% csrf_token %}
+    {% include 'partials/bootstrap_form.html' with form=form %}
+    <button class="btn" id="blue-btn" type="submit">Create subsection</button>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% load widget_tweaks %}
+{% load field_filters %}
+    {% for field in form %}
+        <div class="mb-3">
+        {{ field.label_tag }}
+        {% if field|is_radio_select %}
+            {% if form.is_bound %}
+                {% if field.errors %}
+                    {% render_field field class="is-invalid flex-item" %}
+                {% else %}
+                    {% render_field field class="flex-item"%}
+                {% endif %}
+            {% else %}
+                {% render_field field class="flex-item"%}
+            {% endif %}
+        {% elif form.is_bound %}
+            {% if field.errors %}
+                {% render_field field class="form-control is-invalid flex-item" %}
+                {{ field.errors }}
+            {% else %}
+                {% render_field field class="form-control flex-item" %}
+        {% endif %}
+        {% else %}
+            {% render_field field class="form-control flex-item" %}
+        {% endif %}
+        </div>
+    {% endfor %}

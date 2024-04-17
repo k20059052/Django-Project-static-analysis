@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<html>
+  <head>
+    <title> Edit Department </title>
+  </head>
+  <body>
+    <div class="card form-card ">
+      <h1>Edit Department</h1>
+      Department ID: {{department.id}} <br>
+      <hr>
+      {% if error_str|length > 0 %}
+          {{ error_str }}
+      {% else %}
+        <form method="post" class="login-form" style="display: inline;">
+          {% csrf_token %}
+          {% include 'partials/bootstrap_form.html' with form=form %}
+          <div class="btn-container">
+            <input id="blue-btn" class="btn" type="submit" name="save" value="Save">
+            <a href="/department_manager/" id="red-btn" class="btn">Cancel</a>
+          </div>
+        </form>
+      {% endif %}
+    </div>
+  </body>
+</html>
+{% endblock %}

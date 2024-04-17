@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="dash-banner director-banner" style="height: 25vmin; margin-bottom:-11vmin;">
+    <div class="dash-title" style="justify-content: space-between;">
+      <div style="display:flex; align-items: center;">
+        <i class="fa-regular fa-list" style="padding-right:2vmin; font-size:4vmin; opacity:0.5;"></i>
+        <h1 class="dept-manager-title">Subsection Manager</h1>
+      </div>
+      <a href="{% url 'specialist_dashboard' ticket_type='personal' %}" style="opacity:0.8; text-decoration:none; color: white;">🢐 Back to Dashboard</a>
+    </div>
+</div>
+<div class="container">
+  <div class="dept-manager-table card">
+    <div id="dash-card-header" class="card-header">
+      <div style="vertical-align: middle;">Subsections</div>
+      <div class="dept-manager-table-btns">
+        <button id="blue-btn" class="btn" type="submit" name="add">
+          <a href="{% url 'create_subsection'%}" class="blue-link">Add Subsection</a>
+        </button>
+      </div>
+    </div>
+    <div id="dash-card-body" class="card-body" style="padding-top:0;">
+      <form method="post" style="display:inline;">
+        {% csrf_token %}
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+                <th style="padding-left:2vmin;">ID</th>
+                <th>Name</th>
+                <th style="text-align:center;">Edit</th>
+                <th style="text-align:center;">Delete</th>
+            </thead>
+            {% for subsection in subsections %}
+            <tr>
+                <td style="padding-left:2vmin;">{{subsection.id}}</td>
+                <td>{{subsection.name}}</td>
+                <td style="text-align:center;"><button id="blue-btn" class="btn" type="submit" name="edit" value={{subsection.id}}>✎</button></td>
+                <td style="text-align:center;"><button id="red-btn" class="btn" type="submit" name="delete" value={{subsection.id}}>✖</button></td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+        {% include 'partials/pagination.html' %}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

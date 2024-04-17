@@ -1,0 +1,114 @@
+[
+    {
+        "model": "ticketing.department",
+        "pk": 1,
+        "fields": {
+            "name": "Health",
+            "slug": "health"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 2,
+        "fields": {
+            "name": "Accomodation",
+            "slug": "accomodation"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 3,
+        "fields": {
+            "name": "Visa",
+            "slug": "visa"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 4,
+        "fields": {
+            "name": "Administration",
+            "slug": "administration"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 5,
+        "fields": {
+            "name": "Skills",
+            "slug": "skills"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 6,
+        "fields": {
+            "name": "Complaints",
+            "slug": "complaints"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 7,
+        "fields": {
+            "name": "Inclusion",
+            "slug": "inclusion"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 8,
+        "fields": {
+            "name": "Document & Letter Requests",
+            "slug": "document-letter-requests"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 9,
+        "fields": {
+            "name": "Money",
+            "slug": "money"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 10,
+        "fields": {
+            "name": "Student Life",
+            "slug": "student-life"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 11,
+        "fields": {
+            "name": "Student Services Online",
+            "slug": "student-services-online"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 12,
+        "fields": {
+            "name": "Disability Support",
+            "slug": "disability-support"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 13,
+        "fields": {
+            "name": "Graduation",
+            "slug": "graduation"
+        }
+    },
+    {
+        "model": "ticketing.department",
+        "pk": 14,
+        "fields": {
+            "name": "New Students",
+            "slug": "new-students"
+        }
+    }
+]

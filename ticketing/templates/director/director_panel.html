@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<html>
+  {% load user_role_filters %}
+  {% load get_query_filters %}
+  {% load selected_filters %}
+  {% load department_filters %}
+  <head>
+    <title> Director Panel </title>
+  </head>
+  <body >
+      <div class="director-banner dash-banner">
+        <div class="dash-title">
+            <img src="{% static 'admin/icons/line-chart.svg' %}" style="opacity:0.5; height:5vmin;">
+            <h1 class="dash-header">Director Panel</h1>
+        </div>
+        <h4 class="dash-subtitle">{{user.first_name}} {{user.last_name}}</h4>
+      </div>
+      <div class="director-grid-container">
+
+        <div id="dash-card" class="card add-user-dash grid-item">
+          <div id="dash-card-header" class="card-header">
+            <div style="padding-top:0.3vmin;"class="dashboard-card-title">Add User</div>
+          </div>
+          <div class="container">
+            <form method="post" style="display: inline;">
+            {% csrf_token %}
+            {% include 'partials/bootstrap_form.html' with form=form %}
+            <div style="text-align:center;">
+              <input id="blue-btn" class="btn" type="submit" name="add" value="Add">
+            </div>
+            </form>
+          </div>
+        </div>
+
+        <div id="dash-card" class="card dept-manager-dash grid-item">
+          <div id="dash-card-header" class="card-header">
+            <div style="padding-top:0.3vmin;"class="dashboard-card-title">Departments</div>
+            <a id="dash-card-header-link" class="blue-link dashboard-card-title" style="margin:1vmin;"href="{% url 'department_manager' %}">More 🢒</a>
+          </div>
+          <div id="dash-card-body" class="card-body">
+            <table class="table">
+              {% for dept in departments %}
+                <tr><td class="dashboard-department-name">{{ dept }}</td></tr>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+
+        <div id="dash-card" class="card user-manager-dash grid-item">
+          <div id="dash-card-header" class="card-header">
+            <div style="vertical-align: middle;"class="dashboard-card-title">Users</div>
+            <div class="user-filter container">
+              <a id="dash-card-header-link" class="dropdown-toggle blue-link dashboard-card-title" data-bs-toggle="dropdown" aria-expanded="false">Filter</a>
+              <div class="filter-dropdown dropdown-menu dropdown-menu-end" onclick="event.stopPropagation();">
+                <div class="container">
+                  <form method="get" style="display: inline;">
+                      {% include 'partials/bootstrap_auto_form.html' with form=filter_form %}
+                    <input id="green-btn" class="btn" type="submit" value="Apply">
+                  </form>
+                  <button id="red-btn" class="btn" onclick="location.href='{{ request.path }}'">Reset</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="dash-card-body" class="card-body" style="padding-top:0;">
+            <form method="post" style="display:inline;">
+              <div class="utilities">
+                <div class="user-commands container">
+
+                  <h5 class="flex-item">Commands</h5>
+                  {% include 'partials/bootstrap_form.html' with form=commands_form %}
+                
+                            <button id="green-btn" class="btn custom-btn" type="submit" name="set_role" value="1">Set Account Role</button>
+                     
+                            <button id="red-btn" class="btn custom-btn" type="submit" name="delete" value="Delete">Delete</button>
+                     
+                    </div>
+              </div>
+
+              <div class="user-table table-responsive">
+                {% csrf_token %}
+                  <table class="table">
+                      <thead>
+                          <th >ID</th>
+                          <th >Email</th>
+                          <th >F.Name</th>
+                          <th >L.Name</th>
+                          <th >Role</th>
+                          <th >Department</th>
+                          <th >✓</th>
+                          <th >Edit</th>
+                          <th >Password</th>
+                      </thead>
+                      {% for user in page_obj %}
+                      <tr>
+                          <td >{{user.id}}</td>
+                          <td >{{user.email}}</td>
+                          <td >{{user.first_name}}</td>
+                          <td >{{user.last_name}}</td>
+                          <td >{{user.role|user_role_string}}</td>
+                          <td >{{user|user_department_string}}</td>
+                          <td ><input type="checkbox" id="select" name="select" value="{{user.id}}" {% if selected|is_selected:user.id %}checked{% endif %}></td>
+                          <form method="post" style="display:inline;">
+                            {% csrf_token %}
+                          <td ><button id="blue-btn" class="btn" type="submit" name="edit" value={{user.id}}>✎</button></td>
+                          <td  style="justify-content: center;" >
+                            <button id="blue-btn" class="btn" type="submit" name="password" value={{user.id}}>
+                              <div style="margin-bottom: -2px; margin-top: 4px; padding-left: 2px; padding-right: 2px;">*</div>
+                            </button>
+                          </td>
+                          </form>
+                      </tr>
+                      {% endfor %}
+
+                  </table>
+                {% include 'partials/pagination.html' %}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
+{% endblock %}

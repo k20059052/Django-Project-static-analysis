@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+<Title>{{ ticket.header }}</Title>
+<div class="banner dash-banner">
+    <div class="dash-title">
+        <h1 class="dash-header">Subject: {{ ticket.header }}<br>
+            Department: {{ ticket.department }}</h1>
+            <div class="container" style="text-align:right;">
+                <a href="{% url 'student_dashboard' %}" style="opacity:0.8; text-decoration:none; color: white;">🢐 Back to dashboard</a>
+            </div>
+    </div>
+</div>
+{% if user.is_authenticated %}
+<form method="post" class="text-white" style="padding-top: 12%">{% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-light btn-md bg-light text-dark" type="submit" value="Add comment">
+</form>
+<form method="post" class="text-white" style="padding-top: 4%">{% csrf_token %}
+    <button name="view" class="btn btn-light btn-md bg-light text-dark" type="submit" value="{{ticket.id}}">Close Ticket</button>
+</form>
+
+{% endif %}
+<hr>
+
+<div style="word-wrap: break-word" hx-get="{% url 'message_list' pk=ticket.id %}" hx-trigger="load, every 2s">
+    Loading...
+</div>
+{% endblock %}

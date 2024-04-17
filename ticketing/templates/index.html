@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<title>Home</title>
+<div class="faq-banner dept-faq-banner">
+  <div class="dept-faq-header container">
+    <h3 class="dept-faq-title faq-header">Welcome to HelpdeskX</h3>
+  </div>
+</div>
+<div class="container">
+  <!-- search bar -->
+  <div class="card form-card">
+    <form action="{% url 'home' %}" method="GET">
+      <div class="input-group">
+        <input id="search_bar" class="form-control" type="text" name="query" placeholder="Type your questions here">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+  </div>
+  <!-- allow user to select top three departments -->
+  {% if top_departments %}
+  <div class="department">
+    <p>Select departments that match with your query:</p>
+    <form method="GET" action="{% url 'home'%}" style="display: inline">
+      {% for department_name, department_id in top_departments.items %}
+      <button class="btn btn-primary" type="submit" name=department value="{{ department_id }}">{{department_name}}</button>
+      {% endfor %}
+      {% if query %}
+      <input type="hidden" name="query" value="{{ query }}">
+      {% endif %}
+    </form>
+    {% if user.role != "SP" and user.role != "DI"%}
+      <p>If you feel that none of these options are what you're looking for, create a ticket using the button below.</p>
+      <button type="button" class="btn btn-primary" onclick="location.href='{% url 'create_ticket' %}'">Create a ticket</button>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- allow user to select the subsections now. -->
+  {% if top_subsections%}
+  <div class="subsection">
+    <p>Select a subsection that matches with your query:</p>
+    <form method="GET">
+      {% for subsection_name, subsection_id in top_subsections.items %}
+      <button class="btn btn-primary" type="submit" name=subsection value="{{ subsection_id }}">{{ subsection_name}}</button>
+      {% endfor %}
+      {% if query %}
+      <input type="hidden" name="query" value="{{ query }}">
+      {% endif %}
+    </form>
+    {% if user.role != "SP" and user.role != "DI"%}
+      <p>If you feel that none of these options are what you're looking for, create a ticket using the button below.</p>
+      <button type="button" class="btn btn-primary" onclick="location.href='{% url 'create_ticket' %}'">Create a ticket</button>
+    {% endif %}
+  </div>
+  {% endif %}
+  <!-- now allow user to select the FAQs -->
+  {% if top_FAQs%}
+  <div class="GET">
+    <p>These are the FAQs which match with your search:</p>
+    <div class="accordion" id="faq_accordion">
+      {% for question, answer in top_FAQs.items %}
+        <div class="accordion-item" >
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{forloop.counter}}" aria-expanded="false" aria-controls="flush-collapse{{forloop.counter}}">
+              Q: {{ question }}
+            </button>
+          </h2>
+          <div id="flush-collapse{{forloop.counter}}" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
+            <div class="accordion-body">A: {{ answer }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <br/>
+    {% if user.role != "SP" and user.role != "DI"%}
+      <p>If you feel that none of these options are what you're looking for, create a ticket using the button below.</p>
+      <button type="button" class="btn btn-primary" onclick="location.href='{% url 'create_ticket' %}'">Create a ticket
+      </button>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+</div>
+{% endblock %}

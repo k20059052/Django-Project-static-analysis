@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}
+<Title>{{ ticket.header }}</Title>
+<div class="specialist-banner dash-banner">
+    <div class="dash-title" style="justify-content: space-between;">
+        <h1 class="dash-header" style="font-size:3vw;">Subject: {{ ticket.header }}<br>
+            Department: {{ ticket.department }}<br></h1>
+        <div class="container" style="text-align:right;">
+            <a href="{% url 'specialist_dashboard' ticket_type='personal' %}"
+                style="opacity:0.8; text-decoration:none; color: white;">🢐 Back to dashboard</a>
+        </div>
+    </div>
+</div>
+{% if user.is_authenticated %}
+<form method="post" class="text-white" style="padding-top: 14%">{% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-light btn-md bg-light text-dark" type="submit" value="Add comment">
+</form>
+<form method="post" class="text-white" style="padding-top: 1%">{% csrf_token %}
+    <button name="view" class="btn btn-light btn-md bg-light text-dark" type="submit" value="{{ticket.id}}">Close Ticket</button>
+</form>
+{% endif %}
+<hr>
+<div style="word-wrap: break-word" hx-get="{% url 'message_list' pk=ticket.id %}" hx-trigger="load, every 2s">
+    Loading...
+</div>
+{% endblock %}

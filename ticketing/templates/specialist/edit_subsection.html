@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}
+<html>
+  <head>
+    <title> Edit Subsection </title>
+  </head>
+  <body>
+    <div class="card form-card small-card">
+      <h1>Edit Subsection</h1>
+      Subsection ID: {{subsection.id}} <br>
+      <hr>
+      {% if error_str|length > 0 %}
+          {{ error_str }}
+      {% else %}
+        <form method="post" class="login-form" style="display: inline;">
+          {% csrf_token %}
+          {% include 'partials/bootstrap_form.html' with form=form %}
+          <div class="btn-container">
+            <input id="blue-btn" class="btn" type="submit" name="save" value="Save">
+            <a href="/subsection_manager/" id="red-btn" class="btn">Cancel</a>
+          </div>
+        </form>
+      {% endif %}
+    </div>
+  </body>
+</html>
+{% endblock %}

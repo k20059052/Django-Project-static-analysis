@@ -1,0 +1,23 @@
+<div class="container pt-3" style="background-color: white;">
+    {% for message in object_list %}
+    <p>
+        {% if message.responder %}
+        <strong>
+            {{ message.responder.first_name|title }} {{ message.responder.last_name|title }}
+        </strong> · <em>{{ message.date_time }}</em>
+        <br> <span>{{ message.responder.email}}</span>
+        {% else %}
+        <strong>
+        {{ ticket.student.first_name|title }} {{ ticket.student.last_name|title }}
+        </strong>  · <em>{{message.date_time }}</em>
+        <br> <span>{{ ticket.student.email }}</span>
+        {% endif %}
+    <div style="word-wrap: break-word">
+        {{ message.content }}
+    </div>
+
+    </p>
+    <hr>
+    {% endfor %}
+</div>
+<hr>

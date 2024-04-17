@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="form-card card">
+        <h1>Signup</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% include 'partials/bootstrap_form.html' with form=form %}
+            <button id="blue-btn" class="btn" type="submit">Sign up</button>
+            <a id="red-btn" class="btn" href="{% url 'home' %}">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

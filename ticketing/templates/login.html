@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="form-card card ">
+    <h1>Login</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }} {{ field }}
+                    <span style="padding-top:5px;">{{ field.errors }}</span>
+                    <span style="padding-top:5px;">{{ field.non_field_errors }}</span>
+                </div>
+            {% endfor %}
+            {% if form.errors %}
+            <p style="padding-left: 32px; padding-top:5px;">Your email and password didn't match. Please try again.</p>
+            {% endif %}
+            <button id="blue-btn" class="btn" type="submit" style="margin-top: 2vmin;">Log In</button>
+            <a id="red-btn" class="btn" type="input" href="{% url 'home' %}" style="margin-top: 2vmin;">Cancel</a>
+        </form>
+</div>
+{% endblock %}
